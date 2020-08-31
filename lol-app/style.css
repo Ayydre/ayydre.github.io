@@ -141,3 +141,60 @@ nav {
   text-align: center;
   padding-top: 5px;
 }
+
+#modal {
+  background-color: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 150;
+  overflow: auto;
+}
+
+#modal-textbox {
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 90%;
+  border-radius: 3px;
+  margin: 150px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h2, h4 {
+  text-align: center;
+  color: white;
+  text-shadow: 1px 1px black;
+  font-family: 'Cormorant Garamond', serif;
+  text-transform: uppercase;
+}
+
+h2 {
+  margin-top: 5px;
+  margin-bottom: 0;
+  font-size: 50px;
+  font-weight: 700;
+  font-style: italic;
+}
+
+h4 {
+  margin-top: 0;
+  margin-bottom: 6px;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.champion-splash {
+  width: 100%;
+  background-position: center;
+}
+
+p {
+  color: #ffb703;
+  font-size: 15px;
+  font-family: 'Noto Serif', sans-serif;
+  font-weight: 300;
+  margin: 0;
+}
