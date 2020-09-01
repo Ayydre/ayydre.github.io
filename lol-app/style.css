@@ -1,6 +1,14 @@
 body {
   margin: 0;
+  display: flex;
+  justify-content: center;
 }
+
+/* .bg-color {
+  background-color: #2f3e46;
+  height: 100%;
+  width: 100%;
+} */
 
 .bg-img {
   background-image: url('img/summoners-rift.png');
@@ -14,6 +22,7 @@ body {
 }
 
 .container {
+  width: 95%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -155,7 +164,7 @@ nav {
 
 #modal-textbox {
   background-color: rgba(0, 0, 0, 0.4);
-  width: 90%;
+  width: 80%;
   border-radius: 3px;
   margin: 150px auto;
   display: flex;
@@ -165,13 +174,13 @@ nav {
 
 h2, h4 {
   text-align: center;
-  color: white;
   text-shadow: 1px 1px black;
   font-family: 'Cormorant Garamond', serif;
   text-transform: uppercase;
 }
 
 h2 {
+  color: white;
   margin-top: 5px;
   margin-bottom: 0;
   font-size: 50px;
@@ -180,6 +189,7 @@ h2 {
 }
 
 h4 {
+  color: #ecf9d1;
   margin-top: 0;
   margin-bottom: 6px;
   font-weight: 600;
@@ -197,4 +207,14 @@ p {
   font-family: 'Noto Serif', sans-serif;
   font-weight: 300;
   margin: 0;
+}
+
+#close-button {
+  text-align: right;
+  font-size: 50px;
+}
+
+#close {
+  color: white;
+  text-decoration: none;
 }
