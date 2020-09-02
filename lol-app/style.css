@@ -148,19 +148,19 @@ nav {
 }
 
 #modal {
-  background-color: rgba(0, 0, 0, 0.8);
   position: fixed;
   top: 0;
   left: 0;
   height: 100%;
   width: 100%;
   z-index: 150;
-  overflow: auto;
-  display: flex;
+  transform: scale(1);
+  display: table;
+  animation: zoom-in 1s 1;
 }
 
 #modal-textbox {
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.7);
   width: 80%;
   border-radius: 3px;
   margin: 150px auto;
@@ -206,12 +206,7 @@ p {
   margin: 0;
 }
 
-#close-button {
-  text-align: right;
-  font-size: 50px;
-}
-
-#close {
-  color: white;
-  text-decoration: none;
+@keyframes zoom-in {
+  from {transform: scale(0);}
+  to {transform: scale(1);}
 }

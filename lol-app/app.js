@@ -59,7 +59,7 @@ $(() => {
 
     const userInput = $('input[type="text"]').val();
       for (let key in champs) {
-        if (userInput.toLowerCase() == champs[key].name.toLowerCase()) {
+        if (userInput.toLowerCase() == champs[key].name.toLowerCase() || userInput.toLowerCase() == champs[key].name.charAt(0).toLowerCase()) {
           filteredChamps[key] = champs[key]
         }
       }
