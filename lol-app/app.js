@@ -12,8 +12,10 @@ $(() => {
     renderChamps(champs);
   })
 
+  // created a renderChamps function to push in champion data
   let renderChamps = (champs) => {
     for (let key in champs) {
+    // created all div's and modals for champion cards by taking info from api
     const $champDiv = $('<div>').addClass('champion')
     const $champImg = $('<img>').addClass('champion-img')
     const $splashImg = $('<img>').addClass('champion-splash')
@@ -52,19 +54,26 @@ $(() => {
     }
   }
 
+  // search event
   $('form').on('submit', event => {
     event.preventDefault();
 
+    // made a variable with an object to store searched champions
     const filteredChamps = {}
 
     const userInput = $('input[type="text"]').val();
       for (let key in champs) {
+        // user input equals champion *full* name or first letter -->
         if (userInput.toLowerCase() == champs[key].name.toLowerCase() || userInput.toLowerCase() == champs[key].name.charAt(0).toLowerCase()) {
           filteredChamps[key] = champs[key]
         }
       }
+
+      // takes out all the champion cards
       $('.champion-cards').empty();
+      // renders the champion(s) name that is equal to user input
       renderChamps(filteredChamps);
+
       // console.log(userInput);
       // console.log(champs);
 

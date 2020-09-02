@@ -2,7 +2,7 @@ body {
   margin: 0;
   display: flex;
   justify-content: center;
-  background-color: #112d39;
+  background-color: rgba(27, 48, 56, 1);
 }
 
 .bg-img {
