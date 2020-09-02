@@ -11,7 +11,7 @@ $(() => {
     champs = data.data;
     renderChamps(champs);
   })
-
+  
   // created a renderChamps function to push in champion data
   let renderChamps = (champs) => {
     for (let key in champs) {
@@ -25,6 +25,7 @@ $(() => {
     const $modalName = $('<h2>').text(champs[key].name)
     const $modalTitle = $('<h4>').text(champs[key].title)
     const $modalp1 = $('<p>').attr('id', 'attack')
+    const $modalp5 = $('<p>').attr('id', 'magic')
     const $modalp2 = $('<p>').attr('id', 'defence')
     const $modalp3 = $('<p>').attr('id', 'difficulty')
     const $modalp4 = $('<p>').attr('id', 'type')
@@ -32,11 +33,12 @@ $(() => {
     const champSplash = 'http://ddragon.leagueoflegends.com/cdn/img/champion/splash/' + champs[key].id + '_0.jpg'
 
     $modalp1.text('Attack: ' + champs[key].info.attack)
+    $modalp5.text('Magic: ' + champs[key].info.magic)
     $modalp2.text('Defense: ' + champs[key].info.defense)
     $modalp3.text('Difficulty: ' + champs[key].info.difficulty)
     $modalp4.text('Type: ' + champs[key].tags)
 
-    $modalText.append($splashImg, $modalName, $modalTitle, $modalp1, $modalp2, $modalp3, $modalp4)
+    $modalText.append($splashImg, $modalName, $modalTitle, $modalp1, $modalp5, $modalp2, $modalp3, $modalp4)
     $splashImg.attr('src', champSplash)
 
     $modal.append($modalText)
