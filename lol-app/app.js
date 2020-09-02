@@ -11,7 +11,7 @@ $(() => {
     champs = data.data;
     renderChamps(champs);
   })
-  
+
   // created a renderChamps function to push in champion data
   let renderChamps = (champs) => {
     for (let key in champs) {
@@ -47,12 +47,23 @@ $(() => {
 
     $champDiv.append($nameDiv, $champImg)
     $('.champion-cards').append($champDiv)
-    $modal.toggle()
 
+      // open modal function
       $champDiv.on('click', event => {
         $champDiv.append($modal)
-        $modal.toggle();
+        // removes body scroll bar
+        $('body').css('overflow', 'hidden')
+        $modal.show();
       })
+      // close modal function
+      $modal.on('click', event => {
+        // stops bubbling
+        event.stopPropagation()
+        // adds body scroll bar back
+        $('body').css('overflow', 'auto')
+        $modal.hide()
+      })
+
     }
   }
 
@@ -64,6 +75,7 @@ $(() => {
     const filteredChamps = {}
 
     const userInput = $('input[type="text"]').val();
+
       for (let key in champs) {
         // user input equals champion *full* name or first letter -->
         if (userInput.toLowerCase() == champs[key].name.toLowerCase() || userInput.toLowerCase() == champs[key].name.charAt(0).toLowerCase()) {
@@ -82,7 +94,28 @@ $(() => {
       $('form').trigger('reset');
     })
 
+  const champType = $('.menu-button').text();
+
+  $('.menu-button').on('click', event => {
+    event.preventDefault();
+
+    const filterChamps = {}
+
+      for (let key in champs) {
+        if (champType.toLowerCase() == champs[key].tags.toLowerCase()) {
+          filterChamps[key] = champs[key]
+          }
+        }
+        $('.champion-cards').empty();
+        renderChamps(filterChamps);
+    })
+
   $('.logo').on('click', event => {
     location.reload();
   })
+
+  $('.icon').on('click', event => {
+    $('.menu').css('display', 'block');
+  })
+
 })
