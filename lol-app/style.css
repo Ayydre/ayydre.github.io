@@ -2,13 +2,8 @@ body {
   margin: 0;
   display: flex;
   justify-content: center;
+  background-color: #112d39;
 }
-
-/* .bg-color {
-  background-color: #2f3e46;
-  height: 100%;
-  width: 100%;
-} */
 
 .bg-img {
   background-image: url('img/summoners-rift.png');
@@ -118,11 +113,12 @@ nav {
   width: 112%;
 }
 .champion:hover > .name {
-  background-color: #264653;
+  /* background-color: #264653; */
+  background-color: #d6ac47;
   font-size: 25px;
   transition: all 0.5s;
   color: #e8f9e2;
-  text-shadow: 1px 1px black;
+  text-shadow: 2px 2px black;
 }
 
 .champion-img {
@@ -160,6 +156,7 @@ nav {
   width: 100%;
   z-index: 150;
   overflow: auto;
+  display: flex;
 }
 
 #modal-textbox {
