@@ -29,6 +29,7 @@ $(() => {
     const $modalp2 = $('<p>').attr('id', 'defence')
     const $modalp3 = $('<p>').attr('id', 'difficulty')
     const $modalp4 = $('<p>').attr('id', 'type')
+    // different link for images. So I set them as a variable with champion data ID
     const champImg = 'http://ddragon.leagueoflegends.com/cdn/img/champion/loading/' + champs[key].id + '_0.jpg'
     const champSplash = 'http://ddragon.leagueoflegends.com/cdn/img/champion/splash/' + champs[key].id + '_0.jpg'
 
@@ -75,7 +76,7 @@ $(() => {
     const filteredChamps = {}
 
     const userInput = $('input[type="text"]').val();
-
+      // iterate over champions
       for (let key in champs) {
         // user input equals champion *full* name or first letter -->
         if (userInput.toLowerCase() == champs[key].name.toLowerCase() || userInput.toLowerCase() == champs[key].name.charAt(0).toLowerCase()) {
@@ -99,15 +100,21 @@ $(() => {
   $('.menu-button').on('click', event => {
     event.preventDefault();
 
-    const filterChamps = {}
+    let champsArr = []
+    let selectedTag = $('.menu-button').text()
 
+    // iterate over champions
       for (let key in champs) {
-        if (champType.toLowerCase() == champs[key].tags.toLowerCase()) {
-          filterChamps[key] = champs[key]
+        // iterate over tags in champion
+        for (let i = 0; i < champs[key].tags.length; i++) {
+        if (champs[key].tag[i].toLowerCase() == selectedTag.toLowerCase()) {
+          // champsArr.push(champs[key])
+          console.log(champs[key]);
           }
         }
+      }
         $('.champion-cards').empty();
-        renderChamps(filterChamps);
+        renderChamps(champsArr);
     })
 
   $('.logo').on('click', event => {

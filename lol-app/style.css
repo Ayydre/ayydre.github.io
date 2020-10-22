@@ -1,3 +1,4 @@
+/* Mobile styling */
 body {
   margin: 0;
   display: flex;
@@ -287,6 +288,7 @@ p {
 }
 
 
+/* web styling */
 @media screen and (min-width: 600px) {
 
   body {
